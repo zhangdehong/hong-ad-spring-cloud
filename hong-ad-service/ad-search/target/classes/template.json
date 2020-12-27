@@ -33,7 +33,7 @@
       ],
       "update": [
         {"column": "id"},
-        {"colimn": "unit_status"},
+        {"column": "unit_status"},
         {"column": "position_type"},
         {"column": "plan_id"}
       ],
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "tableNmae": "ad_creative",
+      "tableName": "ad_creative",
       "level": 2,
       "insert": [
         {"column": "id"},

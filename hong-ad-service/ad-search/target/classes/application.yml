@@ -4,7 +4,7 @@ server:
     context-path: /ad-search
 spring:
   application:
-    name: eureka-client-ad-search
+    name: ad-search
   jpa:
     show-sql: true
     hibernate:
@@ -48,6 +48,10 @@ adconf:
     password: hong#0618
     binlogName: ""
     position: -1
-
   kafks:
     topic: ad-search-mysql-data
+
+
+logging:
+  config: classpath:logback.xml
+  file: ad-search.log
