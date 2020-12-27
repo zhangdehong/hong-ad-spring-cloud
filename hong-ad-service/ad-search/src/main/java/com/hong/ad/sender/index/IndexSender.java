@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.hong.ad.dump.table.*;
 import com.hong.ad.handler.AdLevelDataHandler;
 import com.hong.ad.index.DataLevel;
-import com.hong.ad.mysql.constant.Constant;
-import com.hong.ad.mysql.dto.MySqlRowData;
+import com.hong.ad.constant.Constant;
+import com.hong.ad.dto.MySqlRowData;
 import com.hong.ad.sender.ISender;
 import com.hong.ad.utils.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ import java.util.Map;
  * @Date Create in  12:51 上午 2020/6/7
  */
 @Slf4j
-@Component("indexSender")
+@Component
 public class IndexSender implements ISender {
 
     /**

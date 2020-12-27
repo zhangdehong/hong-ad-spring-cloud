@@ -1,0 +1,58 @@
+server:
+  port: 7002
+  servlet:
+    context-path: /ad-binlog-kafka
+spring:
+  application:
+    name: ad-binlog-kafka
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hong-ad-data?autoReconnect=true&useSSL=false
+    username: root
+    password: hong#0618
+    tomcat:
+      # 最大连接
+      max-active: 4
+      # 最小空闲连接
+      min-idle: 2
+      # 默认初始化连接
+      initial-size: 2
+
+# 配置eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+adconf:
+  mysql:
+    host: 127.0.0.1
+    port: 3306
+    username: root
+    password: hong#0618
+    binlogName:
+    position: -1
+
+  kafka:
+    topic: ad-search-mysql-data
+
+
+logging:
+  config: classpath:logback.xml
+  file: ad-binlog-kafka.log

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/hong-ad-service/ad-binlog-common/ad-binlog-common.iml" filepath="$PROJECT_DIR$/hong-ad-service/ad-binlog-common/ad-binlog-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hong-ad-service/ad-binlog-kafka/ad-binlog-kafka.iml" filepath="$PROJECT_DIR$/hong-ad-service/ad-binlog-kafka/ad-binlog-kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/hong-ad-service/ad-common/ad-common.iml" filepath="$PROJECT_DIR$/hong-ad-service/ad-common/ad-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/hong-ad-service/ad-dashboard/ad-dashboard.iml" filepath="$PROJECT_DIR$/hong-ad-service/ad-dashboard/ad-dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/ad-eureka/ad-eureka.iml" filepath="$PROJECT_DIR$/ad-eureka/ad-eureka.iml" />

@@ -49,7 +49,7 @@ public class AdUnitOpController {
      */
     @PostMapping("/create/unitKeyword")
     public AdUnitKewordResponse createUnitKeyword (@RequestBody AdUnitKewordRequest request) throws AdException {
-        log.info("ad-sponsor:createUnitKeword ->{}", JSON.toJSONString(request));
+        log.info("ad-sponsor:createUnitKeyword ->{}", JSON.toJSONString(request));
         return unitService.createUnitKeword(request);
     }
 

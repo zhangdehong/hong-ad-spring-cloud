@@ -15,7 +15,7 @@ import com.hong.ad.index.creativeunit.CreativeUnitObject;
 import com.hong.ad.index.district.UnitDistrictIndex;
 import com.hong.ad.index.interest.UnitItIndex;
 import com.hong.ad.index.keyword.UnitKeyWordIndex;
-import com.hong.ad.mysql.constant.OpType;
+import com.hong.ad.constant.OpType;
 import com.hong.ad.utils.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
 
