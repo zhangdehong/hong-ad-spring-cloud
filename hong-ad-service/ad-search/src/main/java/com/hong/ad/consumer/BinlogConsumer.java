@@ -1,6 +1,7 @@
 package com.hong.ad.consumer;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.hong.ad.dto.MySqlRowData;
 import com.hong.ad.sender.ISender;
 import lombok.extern.slf4j.Slf4j;
@@ -34,9 +35,13 @@ public class BinlogConsumer {
             MySqlRowData rowData = JSON.parseObject(
                     message.toString(), MySqlRowData.class
             );
-            log.info("kafka processMysqlRowData: {}", JSON.toJSONString(rowData));
+            log.info("kafka processMysqlRowData: {}", JSON.toJSONString(
+                    rowData,
+                    SerializerFeature.PrettyFormat,
+                    SerializerFeature.WriteMapNullValue,
+                    SerializerFeature.WriteDateUseDateFormat
+            ));
             // 实现广告数据索引的更新
-
             sender.sender(rowData);
         }
     }

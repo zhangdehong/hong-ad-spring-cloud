@@ -1,7 +1,5 @@
 package com.hong.ad.index.adunit;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 /**
  * @Author: ZhangDeHong
  * @Describe: TODO

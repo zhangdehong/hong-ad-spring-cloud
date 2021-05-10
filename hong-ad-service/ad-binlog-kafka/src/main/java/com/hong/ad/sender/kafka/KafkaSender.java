@@ -1,6 +1,7 @@
 package com.hong.ad.sender.kafka;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.hong.ad.dto.MySqlRowData;
 import com.hong.ad.sender.ISender;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +29,12 @@ public class KafkaSender implements ISender {
 
     @Override
     public void sender (MySqlRowData rowData) {
-        log.info("binlog kafka service send MysqlRowData. ->{}", JSON.toJSONString(rowData));
+        log.info("binlog kafka service send MysqlRowData. ->{}", JSON.toJSONString(
+                rowData,
+                SerializerFeature.PrettyFormat,
+                SerializerFeature.WriteMapNullValue,
+                SerializerFeature.WriteDateUseDateFormat
+        ));
         kafkaTemplate.send(topic, JSON.toJSONString(rowData));
     }
 
