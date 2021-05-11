@@ -1,1 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
+/hong-ad-service/ad-binlog-kafka/target/
+/hong-ad-service/ad-binlog-common/target/
+/ad-gateway/target/
+/ad-eureka/target/
+/hong-ad-service/ad-sponsor/target/
+/hong-ad-service/ad-search/target/
+/hong-ad-service/ad-dashboard/target/
+/hong-ad-service/ad-common/target/
+/hong-ad-service/ad-binlog-kafka/target/
