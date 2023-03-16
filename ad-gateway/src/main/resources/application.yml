@@ -18,9 +18,9 @@ zuul:
     search:
       path: /ad-search/**
       serviceId: ad-search
-      strip-profix: false
+      strip-prefix: false
       #127.0.0.1:9000/hong/ad-search/fetchAds
     binlog-kafka:
       path: /ad-binlog-kafka/**
       serviceId: ad-binlog-kafka
-      strip-profix: false
+      strip-prefix: false
