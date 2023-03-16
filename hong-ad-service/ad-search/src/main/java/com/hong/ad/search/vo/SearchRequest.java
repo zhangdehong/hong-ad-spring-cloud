@@ -4,8 +4,7 @@ import com.hong.ad.search.vo.feature.DistrictFeature;
 import com.hong.ad.search.vo.feature.FeatureRelation;
 import com.hong.ad.search.vo.feature.ItFeature;
 import com.hong.ad.search.vo.feature.KeywordFeature;
-import com.hong.ad.search.vo.media.AdSlot;
-import com.hong.ad.search.vo.media.App;
+
 import com.hong.ad.search.vo.media.Device;
 import com.hong.ad.search.vo.media.Geo;
 import lombok.AllArgsConstructor;
@@ -36,7 +35,7 @@ public class SearchRequest {
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class RequestInfo {
+    public static class RequestInfo<AdSlot, App> {
 
         private String requestId;
         private List<AdSlot> adSlots;

@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class CommonUtils {
 
-    private static String[] parsePatterns = {
+    private static final String[] parsePatterns = {
             "yyyy-MM-dd", "yyyy/MM/dd", "yyyy.MM.dd"
     };
 

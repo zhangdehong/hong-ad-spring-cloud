@@ -9,6 +9,10 @@
     <file url="file://$PROJECT_DIR$/hong-ad-service/ad-dashboard/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hong-ad-service/ad-search/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hong-ad-service/ad-sponsor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hong-ad-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hong-ad-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

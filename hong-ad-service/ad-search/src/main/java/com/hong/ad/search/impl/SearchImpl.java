@@ -116,6 +116,7 @@ public class SearchImpl implements ISearch {
         if (CollectionUtils.isEmpty(adUnitIds)) {
             return;
         }
+        UnitKeyWordIndex keyWordIndex = DataTable.of(UnitKeyWordIndex.class);
         // 判断给定的条件是否通过  如果不通过就remove
         if (CollectionUtils.isNotEmpty(keywordFeature.getKeywords())) {
             CollectionUtils.filter(

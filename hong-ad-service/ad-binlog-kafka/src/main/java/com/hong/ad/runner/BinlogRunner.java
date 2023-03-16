@@ -1,6 +1,5 @@
 package com.hong.ad.runner;
 
-import com.github.shyiko.mysql.binlog.BinaryLogClient;
 import com.hong.ad.mysql.BinlogClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

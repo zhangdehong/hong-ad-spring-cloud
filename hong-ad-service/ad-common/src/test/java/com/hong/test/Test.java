@@ -6,7 +6,9 @@ import com.hong.ad.vo.CommonResponse;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
+import java.util.function.Consumer;
 
 /**
  * @Author: ZhangDeHong
@@ -35,5 +37,11 @@ public class Test {
         List<String> str = new ArrayList<>();
         List<String> data = response.getData();
         Properties system = System.getProperties();
+
+        Optional<Integer> optional1 = Optional.ofNullable(1);
+        Optional<Integer> optional2 = Optional.ofNullable(null);
+
+        optional1.ifPresent(integer -> System.out.println("value is " + integer));
+        optional2.ifPresent(integer -> System.out.println("value is " + integer));
     }
 }

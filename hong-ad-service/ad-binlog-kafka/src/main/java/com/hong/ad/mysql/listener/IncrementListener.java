@@ -66,7 +66,7 @@ public class IncrementListener implements IListener {
         // 取出模板中该操作对应的字段列表
         List<String> feildList = table.getOpTypeFiledSetMap().get(opType);
         if (null == feildList) {
-            log.warn("{} not support for", opType, table.getTableName());
+            log.warn("{} , {} not support for", opType, table.getTableName());
             return;
         }
         for (Map<String, String> afterMap : eventData.getAfter()) {

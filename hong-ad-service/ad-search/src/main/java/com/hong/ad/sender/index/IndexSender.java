@@ -39,7 +39,7 @@ public class IndexSender implements ISender {
         } else if (DataLevel.LEVEL4.getLevel().equals(level)) {
             level4RowData(rowData);
         } else {
-            log.info("MYsqlRowData error {}", JSON.toJSONString(rowData));
+            log.info("MySqlRowData error {}", JSON.toJSONString(rowData));
         }
     }
 
