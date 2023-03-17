@@ -24,12 +24,33 @@ spring:
       min-idle: 2
       # 默认初始化连接
       initial-size: 2
+  cloud:
+    nacos:
+      discovery: # 服务发现
+        service: ${spring.application.name} # 使用微服务的名称作为注册的服务名称
+        server-addr: nacos-server:8848  # nacos 的注册注册地址
+        namespace: 37bc85e2-0f3b-4849-a8d6-172584b62c41
+        group: HONG_GROUP
+        # 配置集群名称
+        cluster-name: HongCluster
+        username: hong
+        password: hong
+        metadata: # 配置元数据项
+          version: 1.0 #自定义元数据项
+          company: zhangdehong
+          url: www.henley.com
+          author: zhangdehong
 
 # 配置eureka
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8000/eureka/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8000/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include:*
 
 logging:
   config: classpath:logback.xml

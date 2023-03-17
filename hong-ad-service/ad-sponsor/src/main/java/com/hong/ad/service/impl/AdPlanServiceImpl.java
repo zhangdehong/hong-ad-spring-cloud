@@ -70,7 +70,7 @@ public class AdPlanServiceImpl implements IAdPlanService {
             throw new AdException(Constant.ErrorMsg.REQUEST_PARAM_ERROR);
         }
 
-        return adPlanRepository.findAllByIdAndUserId(request.getIds(), request.getUserId());
+        return adPlanRepository.findAllByIdInAndUserId(request.getIds(), request.getUserId());
     }
 
     @Override

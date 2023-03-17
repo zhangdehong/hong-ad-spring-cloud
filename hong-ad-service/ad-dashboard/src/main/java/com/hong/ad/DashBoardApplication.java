@@ -2,7 +2,6 @@ package com.hong.ad;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 /**
@@ -10,7 +9,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
  * @Describe: TODO
  * @Date Create in  12:44 上午 2020/7/20
  */
-@EnableEurekaClient
+// @EnableEurekaClient
 @SpringBootApplication
 @EnableHystrixDashboard
 public class DashBoardApplication {

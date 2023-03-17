@@ -2,7 +2,6 @@ package com.hong.ad;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * <h1>Binlog kafka 启动程序</h1>
@@ -10,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @Describe: TODO
  * @Date Create by  9:54 下午 2020/12/22
  */
-@EnableEurekaClient
+// @EnableEurekaClient
 @SpringBootApplication
 public class BinlogKafkaApplication {
 
