@@ -64,7 +64,7 @@ adconf:
     password: hong#0618
     binlogName: ""
     position: -1
-  kafks:
+  kafka:
     topic: ad-search-mysql-data
 
 
