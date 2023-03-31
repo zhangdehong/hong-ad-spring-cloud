@@ -48,15 +48,15 @@ public class AdUnitObject {
         return (positionType & AdUnitConstants.POSITION_TYPE.TIEPIAN) > 0;
     }
 
-    private static boolean isTianPianMiddle (int positionType) {
+    private static boolean isTiePianMiddle (int positionType) {
         return (positionType & AdUnitConstants.POSITION_TYPE.TIEPIAN_MIDDLE) > 0;
     }
 
-    private static boolean isTianPianPush (int positionType) {
-        return (positionType & AdUnitConstants.POSITION_TYPE.TIEPIAN_PUSH) > 0;
+    private static boolean isTiePianPush (int positionType) {
+        return (positionType & AdUnitConstants.POSITION_TYPE.TIEPIAN_PAUSE) > 0;
     }
 
-    private static boolean isTianPianPost (int positionType) {
+    private static boolean isTiePianPost (int positionType) {
         return (positionType & AdUnitConstants.POSITION_TYPE.TIEPIAN_POST) > 0;
     }
 
@@ -67,11 +67,11 @@ public class AdUnitObject {
             case AdUnitConstants.POSITION_TYPE.TIEPIAN:
                 return isTiePian(positionType);
             case AdUnitConstants.POSITION_TYPE.TIEPIAN_MIDDLE:
-                return isTianPianMiddle(positionType);
-            case AdUnitConstants.POSITION_TYPE.TIEPIAN_PUSH:
-                return isTianPianPush(positionType);
+                return isTiePianMiddle(positionType);
+            case AdUnitConstants.POSITION_TYPE.TIEPIAN_PAUSE:
+                return isTiePianPush(positionType);
             case AdUnitConstants.POSITION_TYPE.TIEPIAN_POST:
-                return isTianPianPost(positionType);
+                return isTiePianPost(positionType);
             default:
                 return false;
         }

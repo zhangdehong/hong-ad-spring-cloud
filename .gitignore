@@ -7,6 +7,6 @@
 /hong-ad-service/ad-search/target/
 /hong-ad-service/ad-dashboard/target/
 /hong-ad-service/ad-common/target/
-/hong-ad-service/ad-binlog-kafka/target/
 /.idea/sonarlint/
 /logs/
+/.idea/

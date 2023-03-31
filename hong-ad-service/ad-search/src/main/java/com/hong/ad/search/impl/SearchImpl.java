@@ -66,6 +66,7 @@ public class SearchImpl implements ISearch {
                 filterKeywordFeature(adUnitIdSet, keywordFeature);
                 filterDistrictFeature(adUnitIdSet, districtFeature);
                 filterItTagFeature(adUnitIdSet, itFeature);
+                // 取出来  如果是or
                 targetUnitIdSet = adUnitIdSet;
             } else {
                 targetUnitIdSet = getOrRelation(
@@ -79,13 +80,13 @@ public class SearchImpl implements ISearch {
             filterAdUnitAdPlanStatus(unitObjects, CommonStatus.VALID);
             // 获取到关联的创意id
             List<Long> adIds = DataTable.of(CreativeUnitIndex.class).selectAds(unitObjects);
-            // 获取到对应的创意对象
+            // 通过创意id获取到对应的创意对象
             List<CreativeObject> creativeObjects = DataTable.of(CreativeIndex.class).fetch(adIds);
             // 通过 AdSlot 对 creativeObject 的过滤
             filterCreativeByAdSlot(creativeObjects, slot.getWidth(), slot.getHeight(), slot.getType());
             adSlot2Ads.put(slot.getAdSlotCode(), buildCreativeResponse(creativeObjects));
         }
-        log.info("fetchAds :{}--{}", JSON.toJSONString(request), JSON.toJSONString(response));
+        log.info("fetchAds request : {} / response : {}", JSON.toJSONString(request), JSON.toJSONString(response));
         return response;
     }
 
@@ -112,16 +113,24 @@ public class SearchImpl implements ISearch {
         );
     }
 
+    /**
+     * 过滤关键词 feature
+     *
+     * @param adUnitIds
+     * @param keywordFeature
+     */
     private void filterKeywordFeature (Collection<Long> adUnitIds, KeywordFeature keywordFeature) {
         if (CollectionUtils.isEmpty(adUnitIds)) {
             return;
         }
-        UnitKeyWordIndex keyWordIndex = DataTable.of(UnitKeyWordIndex.class);
+        // UnitKeyWordIndex keyWordIndex = DataTable.of(UnitKeyWordIndex.class);
         // 判断给定的条件是否通过  如果不通过就remove
         if (CollectionUtils.isNotEmpty(keywordFeature.getKeywords())) {
             CollectionUtils.filter(
-                    adUnitIds,
-                    adUnitId -> DataTable.of(UnitKeyWordIndex.class).match(adUnitId, keywordFeature.getKeywords())
+                    adUnitIds, // 需要过滤的集合
+                    // 如果adUnitId 通过不过滤，如果不通过  从adUnitIds 中移除掉
+                    adUnitId -> DataTable.of(UnitKeyWordIndex.class)
+                            .match(adUnitId, keywordFeature.getKeywords())
             );
         }
     }
@@ -139,7 +148,8 @@ public class SearchImpl implements ISearch {
         if (CollectionUtils.isNotEmpty(districtFeature.getDistricts())) {
             CollectionUtils.filter(
                     adUnitIds,
-                    adUnitId -> DataTable.of(UnitDistrictIndex.class).match(adUnitId, districtFeature.getDistricts())
+                    adUnitId -> DataTable.of(UnitDistrictIndex.class)
+                            .match(adUnitId, districtFeature.getDistricts())
             );
         }
     }
@@ -163,6 +173,12 @@ public class SearchImpl implements ISearch {
         }
     }
 
+    /**
+     * 根据推广单元以及推广计划的状态 实现对unitObjects的过滤
+     *
+     * @param unitObjects
+     * @param status
+     */
     private void filterAdUnitAdPlanStatus (List<AdUnitObject> unitObjects, CommonStatus status) {
         if (CollectionUtils.isEmpty(unitObjects)) {
             return;
@@ -202,6 +218,7 @@ public class SearchImpl implements ISearch {
         CreativeObject randomObject = creatives.get(
                 Math.abs(new Random().nextInt()) % creatives.size()
         );
+        //  随机返回一个创意对象
         return Collections.singletonList(
                 SearchResponse.convert(randomObject)
         );

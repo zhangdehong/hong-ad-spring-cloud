@@ -1,5 +1,9 @@
 package com.hong.ad.search.vo.media;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * 媒体方的设备信息
  *
@@ -7,6 +11,9 @@ package com.hong.ad.search.vo.media;
  * @Describe: TODO
  * @Date Create in  11:11 下午 2020/6/8
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Device {
 
     // 设备编码

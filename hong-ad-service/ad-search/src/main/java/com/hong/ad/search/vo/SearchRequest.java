@@ -5,6 +5,8 @@ import com.hong.ad.search.vo.feature.FeatureRelation;
 import com.hong.ad.search.vo.feature.ItFeature;
 import com.hong.ad.search.vo.feature.KeywordFeature;
 
+import com.hong.ad.search.vo.media.AdSlot;
+import com.hong.ad.search.vo.media.App;
 import com.hong.ad.search.vo.media.Device;
 import com.hong.ad.search.vo.media.Geo;
 import lombok.AllArgsConstructor;
@@ -35,12 +37,16 @@ public class SearchRequest {
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class RequestInfo<AdSlot, App> {
+    public static class RequestInfo {
 
         private String requestId;
+        // 广告位信息
         private List<AdSlot> adSlots;
+        // app信息
         private App app;
+        // 地理位置信息
         private Geo geo;
+        // 设备信息
         private Device device;
     }
 
@@ -49,8 +55,11 @@ public class SearchRequest {
     @NoArgsConstructor
     public static class FeatureInfo {
 
+        // 关键词
         private KeywordFeature keywordFeature;
+        //
         private DistrictFeature districtFeature;
+        // 兴趣
         private ItFeature itFeature;
         // 默认所有的feature都满足 才匹配
         private FeatureRelation relation = FeatureRelation.AND;

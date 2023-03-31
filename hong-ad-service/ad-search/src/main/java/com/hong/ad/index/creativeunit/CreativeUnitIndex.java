@@ -78,7 +78,7 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
     /**
      * 通过推广单元对象，获取到创意的ads
      *
-     * @param unitObjects
+     * @param unitObjects 传递的推广单元对象
      * @return
      */
     public List<Long> selectAds (List<AdUnitObject> unitObjects) {
@@ -87,7 +87,7 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
         }
         List<Long> result = new ArrayList<>();
         for (AdUnitObject unitObject : unitObjects) {
-            // 根据推广单元id  拿到所以的创意id
+            // 根据推广单元id  拿到所有的创意id
             Set<Long> adIds = unitCreativeMap.get(unitObject.getUnitId());
             if (CollectionUtils.isNotEmpty(adIds)) {
                 result.addAll(adIds);

@@ -23,8 +23,15 @@ public class AdUnitIndex implements IndexAware<Long, AdUnitObject> {
         objectMap = new ConcurrentHashMap<>();
     }
 
+    /**
+     * 进行匹配
+     *
+     * @param positionType
+     * @return
+     */
     public Set<Long> match (Integer positionType) {
         Set<Long> adUnitIds = new HashSet<>();
+        // 对当前的索引对象进行遍历，是否有满足对象的推广单元
         objectMap.forEach((k, v) -> {
             if (AdUnitObject.isAdSlotOk(positionType, v.getPositionType())) {
                 adUnitIds.add(k);
@@ -33,15 +40,21 @@ public class AdUnitIndex implements IndexAware<Long, AdUnitObject> {
         return adUnitIds;
     }
 
+    /**
+     * 更具推广单元的ids 获取对应的索引对象
+     *
+     * @param adUnitIds
+     * @return
+     */
     public List<AdUnitObject> fetch (Collection<Long> adUnitIds) {
         if (CollectionUtils.isEmpty(adUnitIds)) {
             return Collections.emptyList();
         }
         List<AdUnitObject> result = new ArrayList<>();
-        adUnitIds.forEach(u ->{
+        adUnitIds.forEach(u -> {
             AdUnitObject object = get(u);
-            if(null == object){
-                log.info("AdUnitObject is not found {}",u);
+            if (null == object) {
+                log.error("AdUnitObject is not found {}", u);
                 return;
             }
             result.add(object);

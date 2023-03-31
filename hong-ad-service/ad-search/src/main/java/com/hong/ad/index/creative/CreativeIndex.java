@@ -37,7 +37,7 @@ public class CreativeIndex implements IndexAware<Long, CreativeObject> {
         adIds.forEach(u -> {
             CreativeObject object = get(u);
             if (null == object) {
-                log.info("CreativeObject not found {}");
+                log.info("CreativeObject not found {}",u);
                 return;
             }
             result.add(object);

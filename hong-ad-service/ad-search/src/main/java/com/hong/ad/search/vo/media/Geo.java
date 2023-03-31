@@ -19,6 +19,8 @@ public class Geo {
     // 纬度
     private Float longitude;
 
+    // 城市
     private String city;
+    // 省份
     private String province;
 }

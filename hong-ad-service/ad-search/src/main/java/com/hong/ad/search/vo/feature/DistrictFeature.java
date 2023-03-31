@@ -14,6 +14,8 @@ import java.util.List;
  * @Date Create in  11:20 下午 2020/6/8
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class DistrictFeature {
 
     private List<ProvinceAndCity> districts;
@@ -23,7 +25,9 @@ public class DistrictFeature {
     @AllArgsConstructor
     public static class ProvinceAndCity {
 
+        // 省
         private String province;
+        // 市
         private String city;
     }
 }

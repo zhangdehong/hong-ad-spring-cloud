@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -21,26 +20,41 @@ import java.util.Map;
 @NoArgsConstructor
 public class SearchResponse {
 
+    // 广告位信息和创意信息的 映射关系
     public Map<String, List<Creative>> adSlot2Ads = new HashMap<>();
 
+    /**
+     * 广告创意
+     */
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     public static class Creative {
 
+        // 广告id
         private Long adId;
+        // 广告地址
         private String adUrl;
+        // 广告宽高
         private Integer width;
         private Integer height;
+        // 广告类型
         private Integer type;
+        // 子类型
         private Integer materialType;
 
-        // 展示检测URL
+        // 展示监测URL
         private List<String> showMonitorUrl = Arrays.asList("www.hong.com", "www.hong.com");
-        // 点击检测URL
+        // 点击监测URL
         private List<String> clickMonitorUrl = Arrays.asList("www.hong.com", "www.hong.com");
     }
 
+    /**
+     * 装换为媒体方的广告创意数据
+     *
+     * @param object
+     * @return Creative
+     */
     public static Creative convert (CreativeObject object) {
         Creative creative = new Creative();
         creative.setAdId(object.getAdId());

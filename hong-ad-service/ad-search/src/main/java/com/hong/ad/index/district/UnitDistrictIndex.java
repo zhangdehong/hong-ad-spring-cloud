@@ -72,6 +72,7 @@ public class UnitDistrictIndex implements IndexAware<String, Set<Long>> {
             List<String> targetDistricts = districts.stream().map(
                     d -> CommonUtils.stringConcat(d.getProvince(), d.getCity())
             ).collect(Collectors.toList());
+            // 是否子集 targetDistricts 是否 unitDistricts 子集 如果是返回true  否则返回false
             return CollectionUtils.isSubCollection(targetDistricts, unitDistricts);
         }
         return false;
