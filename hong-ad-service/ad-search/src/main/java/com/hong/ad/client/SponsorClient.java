@@ -15,7 +15,7 @@ import java.util.List;
  * @Describe: TODO
  * @Date Create in  2:55 PM 2020/1/28
  */
-@FeignClient(value = "eureka-client-ad-sponsor",fallback = SponsorClientHystrix.class)
+@FeignClient(value = "ad-sponsor-client",fallback = SponsorClientHystrix.class)
 public interface SponsorClient {
 
     @RequestMapping(value = "/ad-sponsor/get/adPlan",method = RequestMethod.GET)

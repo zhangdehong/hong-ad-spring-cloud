@@ -52,14 +52,14 @@ public class SearchController {
     public CommonResponse<List<AdPlan>> getAdPlansByRebbon (@RequestBody AdPlanGetRequest request) {
         log.info("ad-search:getAdPlansByRibbon -> {}", JSON.toJSONString(request));
         return restTemplate.postForEntity(
-                "http://eureka-client-ad-sponsor/ad-sponsor/get/adPlan",
+                "http://ad-sponsor-client/ad-sponsor/get/adPlan",
                 request,
                 CommonResponse.class
         ).getBody();
     }
 
     @IgnoreResponseAdvice
-    @PostMapping("/getAdplans")
+    @PostMapping("/getAdPlans")
     public CommonResponse<List<AdPlan>> getAdPlans (@RequestBody AdPlanGetRequest request) {
         log.info("ad-search: getAdPlans -> {}", JSON.toJSONString(request));
         CommonResponse<List<AdPlan>> adPlans = sponsorClient.getAdPlans(request);
