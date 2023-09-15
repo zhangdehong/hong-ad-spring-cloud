@@ -9,6 +9,7 @@ import com.hong.ad.search.ISearch;
 import com.hong.ad.search.vo.SearchRequest;
 import com.hong.ad.search.vo.SearchResponse;
 import com.hong.ad.vo.CommonResponse;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

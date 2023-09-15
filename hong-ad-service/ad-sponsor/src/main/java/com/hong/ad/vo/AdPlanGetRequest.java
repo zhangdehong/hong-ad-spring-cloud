@@ -1,9 +1,12 @@
 package com.hong.ad.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Author: ZhangDeHong
@@ -11,6 +14,8 @@ import java.util.List;
  * @Date Create in  1:11 PM 2019/11/24
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AdPlanGetRequest {
 
     private Long userId;

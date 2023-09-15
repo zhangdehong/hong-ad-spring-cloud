@@ -2,13 +2,13 @@
 -- init data for table `ad_user`
 --
 
-INSERT INTO `ad_user` VALUES (15,'qinyi','B2E56F2420D73FEC125D2D51641C5713',1,'2018-11-19 20:29:01','2018-11-19 20:29:01');
+INSERT INTO `ad_user` VALUES (15,'dh','B2E56F2420D73FEC125D2D51641C5713',1,'2018-11-19 20:29:01','2018-11-19 20:29:01');
 
 --
 -- init data for table `ad_creative`
 --
 
-INSERT INTO `ad_creative` VALUES (10,'第一个创意',1,1,720,1080,1024,0,1,15,'https://www.imooc.com','2018-11-19 21:31:31','2018-11-19 21:31:31');
+INSERT INTO `ad_creative` VALUES (10,'第一个创意',1,1,720,1080,1024,0,1,15,'https://www.hong.com','2018-11-19 21:31:31','2018-11-19 21:31:31');
 
 --
 -- init data for table `ad_plan`

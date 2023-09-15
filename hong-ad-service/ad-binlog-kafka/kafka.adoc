@@ -10,7 +10,7 @@ image::image/zookeeper.png[]
 QuorumPeerMain 说明zookeeper启动成功
 
     2 启动kafka
-        bin/kafka-server-start.sh -daemon config/kafka.properties
+        bin/kafka-server-start.sh  config/server.properties
 
 image::image/kafka-start-error.png[]
 

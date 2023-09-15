@@ -1,10 +1,10 @@
 server:
-  port: 7003
+  port: 7001
   servlet:
-    context-path: /ad-binlog-kafka
+    context-path: /ad-search
 spring:
   application:
-    name: ad-binlog-kafka
+    name: ad-search
   jpa:
     show-sql: true
     hibernate:
@@ -40,6 +40,7 @@ spring:
           company: zhangdehong
           url: www.henley.com
           author: zhangdehong
+
 # 配置eureka
 #eureka:
 #  client:
@@ -61,13 +62,12 @@ adconf:
     port: 3306
     username: root
     password: hong#0618
-    binlogName:
+    binlogName: ""
     position: -1
-
   kafka:
     topic: ad-search-mysql-data
 
 
 logging:
   config: classpath:logback.xml
-  file: ad-binlog-kafka.log
+  file: ad-search.log
